@@ -1,0 +1,38 @@
+For : run_analysis.R script 
+Actions performed : Data preparation and the 5 steps required as per course project’s guidelines.
+
+Description:
+1) Dataset downloaded and extracted in the working directory as Coursera_Week4_Final.zip
+
+2) Assign Data to variables:
+Line 15:22
+features (the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.), activites (List of activities performed when the corresponding measurements were taken and its codes (labels)),
+subject_test (contains test data of volunteer test subjects being observed), x_test, 
+y_test (contains recorded features test data), 
+subject_train (contains train data of volunteer subjects being observed), 
+x_train (contains recorded features train data) and 
+y_train (contains train data of activities’code labels)
+
+3) Merging the training and the test sets to create one data set
+x_train and x_test using rbind() function
+y_train and y_test using rbind() function
+subject_train and subject_test using rbind() function
+Subject, Y and X using cbind() function
+
+4) Extract the measurements on the mean and standard deviation for each measurement
+Subsetting Merged_Data, selecting only columns: subject, code and the measurements on the mean and standard deviation (std) for each measurement
+
+5) Uses descriptive activity names to name the activities in the data set
+
+6) Appropriately labels the data set with descriptive variable names.
+A) code column in TidyData renamed into activities
+B) All Acc in column’s name replaced by Accelerometer
+C) All Gyro in column’s name replaced by Gyroscope
+D) All BodyBody in column’s name replaced by Body
+E) All Mag in column’s name replaced by Magnitude
+F) All start with character f in column’s name replaced by Frequency
+G) All start with character t in column’s name replaced by Time
+
+7) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+FinalData created by summarizing Tidy data taking the means of each variable, each activity and each subject, after grouping by subject and activity
+Exporting to FinalData.txt
